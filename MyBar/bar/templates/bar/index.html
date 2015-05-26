@@ -1,9 +1,0 @@
-{% if cocktail_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <li><a href="/polls/{{ Cocktail.id }}/">{{ Cocktail.name }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No cocktails are available.</p>
-{% endif %}
