@@ -10,8 +10,10 @@ class Ingredient(models.Model):
     alcohol  = models.IntegerField()
     # Avg. Prices
     # Where to buy
+
     def __str__(self):
         return self.name
+
 
 class Cocktail (models.Model):
     # Pk
@@ -25,8 +27,9 @@ class Cocktail (models.Model):
     def __str__(self):
         return self.name
 
+
 class Components(models.Model):
-    coctail = models.ForeignKey(Cocktail)
+    cocktail = models.ForeignKey(Cocktail)
     ingredient = models.ForeignKey(Ingredient)
     amount = models.CharField(max_length=100)
 

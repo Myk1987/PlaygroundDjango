@@ -1,0 +1,10 @@
+{% if cocktail_list %}
+    <h2>Coctails list</h2>
+    <ul>
+    {% for cocktail in cocktail_list %}
+        <li><a href="/bar/{{ cocktail.name }}/">{{ cocktail.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No cocktails are available.</p>
+{% endif %}
