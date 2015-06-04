@@ -18,12 +18,20 @@ class Ingredient(models.Model):
 class Cocktail (models.Model):
     # Pk
     name = models.CharField(max_length=100)
+    link_name = models.CharField(max_length=100)
     glass = models.CharField(max_length=100)
     recipe = models.CharField(max_length=1000)
     description = models.CharField(max_length=400)
     history = models.CharField(max_length=1000)
     #recommendations
     #Rating
+
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.link_name = self.name.replace(" ", "_")
+        super(Cocktail, self).save(*args, **kwargs)
+
     def __str__(self):
         return self.name
 

@@ -13,14 +13,12 @@ def index(request):
 
 
 def cocktail_detail(request, cocktail_name):
-    current_cocktail = get_object_or_404(Cocktail, name=cocktail_name)
+
+    current_cocktail = get_object_or_404(Cocktail, link_name=cocktail_name)
     components_list = Components.objects.filter(cocktail=current_cocktail.id).order_by('amount')
-    ingredients_dict = {}
-    # for component in components_list:
-    #     print(component.ingredient)
-    #     # ingredients_dict[component.ingredient] = Ingredient.objects.get(id=component.ingredient).name
+
+
 
     return render(request, 'bar/cocktail_detail.html', {'cocktail': current_cocktail,
                                                         'components_list': components_list,
-                                                        # 'ingredients_dict': ingredients_dict
                                                         })
