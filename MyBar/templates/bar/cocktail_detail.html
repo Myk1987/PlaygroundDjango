@@ -1,11 +1,15 @@
+{% extends "bar/base.html" %}
+
+{% block content %}
 {% if cocktail %}
     <h2>{{ cocktail.name }}</h2>
 
     <ul>
     {% for component in components_list %}
-        <li><a href="/bar/ingredient/{{ component.ingredient }}/">{{ component.ingredient }} </a></li> {{ component.amount }}
+        <li><a href="/bar/ingredients/{{ component.ingredient }}/">{{ component.ingredient }} </a></li> {{ component.amount }}
     {% endfor %}
     </ul>
 {% else %}
     <p>No cocktail are available.</p>
 {% endif %}
+{% endblock %}
