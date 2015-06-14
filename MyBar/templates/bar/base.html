@@ -1,24 +1,32 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <title>{% block title %}My bar{% endblock %}</title>
 </head>
 <body>
-    <div id="sidebar">
-        {% block sidebar %}
-        <ul>
-            <li><a href="/bar/">Cocktails</a></li>
-            <li><a href="/bar/ingredients/">Ingredients</a></li>
-        </ul>
-        {% endblock %}
-    </div>
+    <main>
+        <div class="container" id="sidebar">
+            {% block sidebar %}
+            <ul>
+                <li><a href="/bar/">Cocktails</a></li>
+                <li><a href="/bar/ingredients/">Ingredients</a></li>
+            </ul>
+            {% endblock %}
+        </div>
 
-    <div id="content">
-        {% block content %}{% endblock %}
-    </div>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
 </body>
 </html>
+
+
+
 
 
